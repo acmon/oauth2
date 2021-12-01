@@ -1,3 +1,5 @@
+import uvicorn
+
 from fastapi import FastAPI
 
 from routes import breweries, auth, orders
@@ -17,3 +19,6 @@ register_tortoise(
     generate_schemas=True,
     add_exception_handlers=True
 )
+
+if __name__ == '__main__':
+    uvicorn.run(app)
